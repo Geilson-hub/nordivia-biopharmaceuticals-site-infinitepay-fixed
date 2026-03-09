@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { formatBRLFromCents } from "@/lib/money";
 import { Button } from "@/components/ui/Button";
+import { redirect } from "next/navigation";
 
 type Order = {
   id: string;
@@ -22,6 +23,7 @@ export default function PaymentPage() {
   const t = useTranslations("payment");
   const sp = useSearchParams();
   const orderId = sp.get("orderId");
+  
 
   const [order, setOrder] = React.useState<Order | null>(null);
   const [error, setError] = React.useState<string | null>(null);
