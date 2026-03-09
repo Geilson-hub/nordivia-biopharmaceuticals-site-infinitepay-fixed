@@ -6,7 +6,7 @@ import type { AppLocale } from "@/i18n/locales";
 import { Input } from "@/components/ui/Input";
 import { Textarea } from "@/components/ui/Textarea";
 import { Button } from "@/components/ui/Button";
-export const WHATSAPP_NUMBER_E164 = "5511956970564";
+
 
 type Me = {
   fullName: string;
@@ -53,11 +53,7 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
       `${t("wa.phone")}: ${phone}\n\n` +
       `${t("wa.message")}:\n${message}`;
 
-    const url = `https://wa.me/${WHATSAPP_NUMBER_E164}?text=${encodeURIComponent(text)}`;
-
-    // Abre WhatsApp
-    window.open(url, "_blank", "noopener,noreferrer");
-
+       
     setSent(true);
     (e.currentTarget as HTMLFormElement).reset();
   }
