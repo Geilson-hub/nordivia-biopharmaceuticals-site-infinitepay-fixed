@@ -1,0 +1,230 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About us",
+    "products": "Products",
+    "leaflets": "Leaflet Download",
+    "cart": "Cart",
+    "contact": "Contact",
+    "login": "Sign in",
+    "register": "Create account",
+    "logout": "Sign out"
+  },
+  "auth": {
+    "register": {
+      "title": "Create account",
+      "subtitle": "Create your account for a faster checkout.",
+      "form": {
+        "fullName": {
+          "label": "Full name",
+          "placeholder": "Your first and last name"
+        },
+        "phone": {
+          "label": "Phone",
+          "placeholder": "(000) 000-0000"
+        },
+        "phoneIsWhats": "This number is also on WhatsApp",
+        "email": {
+          "label": "Email",
+          "placeholder": "you@example.com"
+        },
+        "password": {
+          "label": "Password",
+          "placeholder": "Create a password"
+        },
+        "cpf": {
+          "label": "ID number",
+          "placeholder": "Your ID number"
+        },
+        "address": {
+          "label": "Address",
+          "placeholder": "Street, number, city"
+        },
+        "marketingOpt": "I’d like to receive updates and promotions via email/WhatsApp.",
+        "submit": "Create account",
+        "submitting": "Creating...",
+        "errors": {
+          "default": "Registration failed."
+        }
+      }
+    }
+  },
+  "checkout": {
+    "title": "Checkout",
+    "needLogin": "You must be signed in to complete checkout.",
+    "loginCta": "Sign in",
+    "missingTitle": "Complete your profile to finish your purchase",
+    "missingBody": "To proceed, you must provide your ID number and shipping address.",
+    "cpfLabel": "ID number",
+    "addressLabel": "Address",
+    "save": "Save and continue",
+    "verifiedTitle": "Details confirmed",
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "whatsappTag": "WhatsApp",
+    "proceedPayment": "Proceed to payment",
+    "summaryTitle": "Summary",
+    "totalLabel": "Total",
+    "summaryHint": "Pix, bank slip (boleto) and credit card (up to 10 installments with fees included) at the payment step.",
+    "errorSave": "Failed to save.",
+    "errorEmptyCart": "Cart is empty.",
+    "errorCreateOrder": "Failed to create order."
+  },
+  "cart": {
+  "title": "Shopping Cart",
+  "subtitle": "Review your products before completing your purchase.",
+  "continue": "Continue shopping",
+  "empty": "Your cart is empty.",
+  "qty": "Qty",
+  "remove": "Remove",
+  "total": "Order Summary",
+  "subtotal": "Subtotal",
+  "grandTotal": "Total",
+  "shipping": "Shipping",
+  "shippingNote": "Fixed shipping fee of $50 CAD for all regions.",
+  "checkout": "Proceed to checkout"
+},
+  "products": {
+    "title": "Products",
+    "search": "Search products...",
+    "addToCart": "Add to cart",
+    "viewDetails": "View details",
+    "continueShopping": "Continue shopping",
+    "goToCheckout": "Go to checkout",
+    "modalAdded": "Product added to cart",
+    "details": {
+      "back": "Back to products",
+      "sections": {
+        "indication": "Indication",
+        "mechanism": "Mechanism of action",
+        "benefits": "Benefits"
+      },
+      "empty": "More information about this product will be available soon.",
+      "actions": {
+        "requestInfo": "Request information"
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Send your message. If you’re signed in, your details will be pre-filled.",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "send": "Send message",
+    "sent": "Message sent successfully.",
+    "errorDefault": "Failed to send your message. Please try again.",
+    "sendWhatsapp": "Send via WhatsApp",
+    "sentWhatsapp": "WhatsApp opened. If needed, review the message and send it.",
+    "errorRequired": "Fill in all fields to send via WhatsApp.",
+    "wa": {
+      "header": "Hi! I’d like to talk to the Nordivia team.",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message"
+    }
+  },
+  "home": {
+    "heroPills": {
+      "pill1": "Biopharmaceuticals",
+      "pill2": "R&D + Manufacturing",
+      "pill3": "Quality first"
+    },
+    "heroTitle": "Nordivia Biopharmaceuticals — Science that raises the bar",
+    "heroSubtitle": "Applied research, robust processes, and consistency-driven manufacturing—focused on traceability, quality, and continuous improvement.",
+    "ctaProducts": "View Products",
+    "ctaLeaflets": "Leaflet Download",
+    "ctaAccount": "Create Account",
+    "metrics": {
+      "m1Title": "40+",
+      "m1Body": "years of process expertise",
+      "m2Title": "QA",
+      "m2Body": "control and documentation",
+      "m3Title": "R&D",
+      "m3Body": "continuous improvement"
+    },
+    "commitments": {
+      "title": "Commitments",
+      "item1": "End-to-end traceability",
+      "item2": "Standardization and control",
+      "item3": "Data-driven continuous improvement",
+      "item4": "Clear documentation",
+      "cta": "Learn about Nordivia"
+    },
+    
+  "payment": {
+    "title": "Payment",
+    "orderLabel": "Order",
+    "missingOrderId": "Missing orderId.",
+    "orderNotFound": "Order not found.",
+    "methodTitle": "Method",
+    "picpay": "PicPay",
+    "picpayHint": "On confirm, you will be redirected to pay with PicPay.",
+    "summaryTitle": "Order summary",
+    "qty": "Qty",
+    "total": "Total",
+
+    "confirm": "Confirm payment",
+    "opening": "Opening checkout...",
+    "startError": "Failed to start payment.",
+    "missingUrl": "Payment link not returned.",
+
+    "disabledTitle": "Payment unavailable",
+    "disabledBody": "Payment is not configured yet. Please try again later.",
+    "backToCart": "Back to cart",
+    "backToProducts": "Back to products",
+    "refresh": "Refresh"
+  },
+ 
+  "trust": {
+    "title": "Quality and Transparency",
+    "subtitle": "Standardization, traceability, and documentation embedded into research and manufacturing routines.",
+    "tag1": "Lot tracking",
+    "tag2": "QC checks",
+    "tag3": "Documentation",
+    "tag4": "Continuous improvement"
+  },
+  "aboutTitle": "About Nordivia",
+  "aboutSubtitle": "Applied-research mindset and processes designed for consistency, control, and scalability.",
+  "softCards": {
+    "c1Title": "Applied research",
+    "c1Body": "Focus on validation, stability, and continuous improvement.",
+    "c2Title": "Robust processes",
+    "c2Body": "Documented routines with traceability.",
+    "c3Title": "Automation",
+    "c3Body": "Operational standardization to reduce variability.",
+    "c4Title": "Quality",
+    "c4Body": "Controls at critical stages to ensure standards."
+  },
+  "chips": {
+    "chip1": "Traceability",
+    "chip2": "Consistency",
+    "chip3": "Quality control"
+  },
+  "sinceTitle": "Founded in 1980",
+  "sinceBody": "Since 1980, Nordivia has developed applied research focused on peptides with a clear goal: maximize safety, consistency, and molecular performance. Our processes are supported by rigorous quality control, structured technical documentation, and robust operating protocols.",
+  "rndTitle": "Research Center",
+  "rndBody": "Our Montreal research center is equipped with state-of-the-art technology and controlled environments, enabling advanced studies to improve peptide synthesis, stability, and applications with scientific precision.",
+  "automationTitle": "Automated Peptide Manufacturing",
+  "automationBody": "Nordivia operates automated production lines, ensuring standardization, traceability, and purity in peptide manufacturing, with continuous quality monitoring at every step.",
+  "scaleTitle": "Scalable with control",
+  "scaleBody": "Technology and validation routines to support growth without losing consistency and compliance.",
+  "midCta": {
+    "title": "Explore the full catalog",
+    "subtitle": "Browse products and technical details quickly.",
+    "primary": "View Products",
+    "secondary": "Talk to the team"
+  },
+  "partnersTitle": "University partnerships",
+  "partnersBody": "Nordivia maintains strategic partnerships with universities and research centers, fostering continuous scientific development, technological innovation, and operational excellence.",
+  "partnersCtaProducts": "View Products",
+  "partnersCtaAccount": "Create Account",
+  "partnersFooter": {
+    "email": "contact@yourdomain.com",
+    "phone": "+1 (000) 000-0000"
+  }
+}
+}
