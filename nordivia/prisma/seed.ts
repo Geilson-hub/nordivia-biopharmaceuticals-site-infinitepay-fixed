@@ -1,6 +1,6 @@
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient } from "@prisma/client";
 
-const prisma = new PrismaClient()
+const prisma = new PrismaClient();
 
 async function main() {
   await prisma.product.createMany({
@@ -8,32 +8,35 @@ async function main() {
       {
         name: "Adipotide 5mg",
         slug: "adipotide-5mg",
-        description: "Peptídeo sintético para pesquisa científica.",
-        price: 1200,
-        image: "/products/adipotide-5mg.svg"
+        concentration: "5mg",
+        brlPrice: 1200,
+        image: "/products/scenes/adipotide-5mg.jpeg",
+        leafletPath: "/leaflets/adipotide-5mg.pdf"
       },
       {
         name: "Ipamorelin 10mg",
         slug: "ipamorelin-10mg",
-        description: "Alta pureza, uso exclusivo laboratorial.",
-        price: 1850,
-        image: "/products/ipamorelin-10mg.svg"
+        concentration: "10mg",
+        brlPrice: 1850,
+        image: "/products/scenes/ipamorelin-10mg.jpeg",
+        leafletPath: "/leaflets/ipamorelin-10mg.pdf"
       },
       {
         name: "Tirzepatide 60mg",
         slug: "tirzepatide-60mg",
-        description: "Formulação avançada com controle QA/QC.",
-        price: 2300,
-        image: "/products/tirzepatide-60mg.svg"
+        concentration: "60mg",
+        brlPrice: 2300,
+        image: "/products/scenes/tirzepatide-60mg.jpeg",
+        leafletPath: "/leaflets/tirzepatide-60mg.pdf"
       }
     ]
-  })
+  });
 }
 
 main()
   .then(() => prisma.$disconnect())
   .catch(async (e) => {
-    console.error(e)
-    await prisma.$disconnect()
-    process.exit(1)
-  })
+    console.error(e);
+    await prisma.$disconnect();
+    process.exit(1);
+  });
