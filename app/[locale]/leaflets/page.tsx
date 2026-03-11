@@ -3,9 +3,15 @@ import { prisma } from "@/lib/db";
 import type { AppLocale } from "@/i18n/locales";
 import { getTranslations } from "next-intl/server";
 
-export default async function LeafletsPage({ params: { locale } }: { params: { locale: AppLocale } }) {
+export default async function LeafletsPage({
+  params: { locale },
+}: {
+  params: { locale: AppLocale };
+}) {
   const t = await getTranslations({ locale });
-  const products = await prisma.product.findMany({ orderBy: { name: "asc" } });
+  const products = await prisma.product.findMany({
+    orderBy: { name: "asc" },
+  });
 
   return (
     <main className="container-max py-12">
@@ -20,12 +26,13 @@ export default async function LeafletsPage({ params: { locale } }: { params: { l
             download
             className="card overflow-hidden hover:opacity-95 transition"
           >
-            <div className="bg-black/5 p-4">
-              <Image src={p.imagePath} alt={p.name} width={900} height={1200} className="h-[260px] w-full object-contain" />
-            </div>
+            <Image src={p.image} alt={p.name} width={900} height={1200} className="h-[260px] w-full object-contain" />
+            
+
             <div className="p-5">
               <div className="text-lg font-extrabold">{p.name}</div>
               <div className="text-sm text-black/70">{p.concentration}</div>
+
               <div className="mt-3 inline-flex rounded-xl border border-black/10 bg-white px-3 py-2 text-sm font-semibold">
                 {t("leaflets.download")}
               </div>
