@@ -2,11 +2,10 @@
 
 import * as React from "react";
 import { useTranslations } from "next-intl";
-import type { AppLocale } from "@/i18n/locales";
 import { Input } from "@/components/ui/Input";
 import { Textarea } from "@/components/ui/Textarea";
 import { Button } from "@/components/ui/Button";
-
+import { WHATSAPP_NUMBER_E164 } from "../../../lib/whatsapp";
 
 type Me = {
   fullName: string;
@@ -14,7 +13,7 @@ type Me = {
   email: string;
 };
 
-export default function ContactPage({ params: { locale } }: { params: { locale: AppLocale } }) {
+export default function ContactPage() {
   const t = useTranslations("contact");
   const [me, setMe] = React.useState<Me | null>(null);
   const [sent, setSent] = React.useState(false);
@@ -24,17 +23,22 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
     (async () => {
       const res = await fetch("/api/me", { cache: "no-store" });
       if (!res.ok) return;
+
       const j = await res.json();
-      setMe({ fullName: j.fullName, phone: j.phone, email: j.email });
+      setMe({
+        fullName: j.fullName,
+        phone: j.phone,
+        email: j.email,
+      });
     })();
   }, []);
 
-  function onSubmit(e: React.FormEvent) {
+  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setSent(false);
     setError(null);
 
-    const fd = new FormData(e.currentTarget as HTMLFormElement);
+    const fd = new FormData(e.currentTarget);
     const name = String(fd.get("name") || "").trim();
     const email = String(fd.get("email") || "").trim();
     const phone = String(fd.get("phone") || "").trim();
@@ -45,7 +49,6 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
       return;
     }
 
-    // Monta uma mensagem bonita
     const text =
       `${t("wa.header")}\n\n` +
       `${t("wa.name")}: ${name}\n` +
@@ -53,9 +56,11 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
       `${t("wa.phone")}: ${phone}\n\n` +
       `${t("wa.message")}:\n${message}`;
 
-       
+    const url = `https://wa.me/${WHATSAPP_NUMBER_E164}?text=${encodeURIComponent(text)}`;
+
     setSent(true);
-    (e.currentTarget as HTMLFormElement).reset();
+    window.open(url, "_blank", "noopener,noreferrer");
+    e.currentTarget.reset();
   }
 
   return (
@@ -70,6 +75,7 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
               <div className="label">{t("name")}</div>
               <Input name="name" required defaultValue={me?.fullName ?? ""} />
             </div>
+
             <div>
               <div className="label">{t("phone")}</div>
               <Input name="phone" required defaultValue={me?.phone ?? ""} />
@@ -78,7 +84,12 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
 
           <div>
             <div className="label">{t("email")}</div>
-            <Input name="email" required type="email" defaultValue={me?.email ?? ""} />
+            <Input
+              name="email"
+              required
+              type="email"
+              defaultValue={me?.email ?? ""}
+            />
           </div>
 
           <div>
