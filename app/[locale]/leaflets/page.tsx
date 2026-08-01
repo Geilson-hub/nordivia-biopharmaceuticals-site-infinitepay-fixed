@@ -10,7 +10,7 @@ export default async function LeafletsPage({
 }) {
   const prisma = await getPrisma();
   const t = await getTranslations({ locale });
-  const products: any[] = await prisma.product.findMany({
+  const products = await prisma.product.findMany({
     orderBy: { name: "asc" },
   });
 
