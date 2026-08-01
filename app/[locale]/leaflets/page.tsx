@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { prisma } from "@/lib/db";
+import { getPrisma } from "@/lib/db";
 import type { AppLocale } from "@/i18n/locales";
 import { getTranslations } from "next-intl/server";
 
@@ -8,8 +8,9 @@ export default async function LeafletsPage({
 }: {
   params: { locale: AppLocale };
 }) {
+  const prisma = await getPrisma();
   const t = await getTranslations({ locale });
-  const products = await prisma.product.findMany({
+  const products: any[] = await prisma.product.findMany({
     orderBy: { name: "asc" },
   });
 
@@ -19,7 +20,7 @@ export default async function LeafletsPage({
       <p className="mt-2 text-black/70">Clique para baixar a bula do produto.</p>
 
       <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {products.map((p) => (
+        {products.map((p: any) => (
           <a
             key={p.id}
             href={p.leafletPath}

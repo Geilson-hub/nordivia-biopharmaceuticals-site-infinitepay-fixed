@@ -1,11 +1,12 @@
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
-import { prisma } from "@/lib/db";
+import { getPrisma } from "@/lib/db";
 import { registerSchema } from "@/lib/validation";
 import { createSessionToken, setSessionCookie } from "@/lib/auth";
 
 export async function POST(req: Request) {
   try {
+    const prisma = await getPrisma();
     const body = await req.json().catch(() => null);
     const parsed = registerSchema.safeParse(body);
 

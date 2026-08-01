@@ -1,9 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
-import { prisma } from "@/lib/db";
+import { getPrisma } from "@/lib/db";
 import { getSessionFromRequest } from "@/lib/auth";
 import { contactSchema } from "@/lib/validation";
 
 export async function POST(req: NextRequest) {
+  const prisma = await getPrisma();
   const body = await req.json().catch(() => null);
   const parsed = contactSchema.safeParse(body);
   if (!parsed.success) {

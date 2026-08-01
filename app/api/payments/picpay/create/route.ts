@@ -1,10 +1,11 @@
 import { NextResponse, NextRequest } from "next/server";
-import { prisma } from "@/lib/db";
+import { getPrisma } from "@/lib/db";
 import { getSessionFromRequest } from "@/lib/auth";
 import crypto from "crypto";
 
 export async function POST(req: NextRequest) {
   try {
+    const prisma = await getPrisma();
     const body = await req.json().catch(() => null);
     const { orderId } = body ?? {};
 

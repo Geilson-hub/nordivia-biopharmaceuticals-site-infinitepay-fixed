@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { prisma } from "@/lib/db";
+import { getPrisma } from "@/lib/db";
 import { getSessionFromRequest } from "@/lib/auth";
 import { z } from "zod";
 
@@ -16,6 +16,7 @@ const bodySchema = z.object({
 });
 
 export async function POST(req: NextRequest) {
+  const prisma = await getPrisma();
   const session = await getSessionFromRequest(req);
   if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
