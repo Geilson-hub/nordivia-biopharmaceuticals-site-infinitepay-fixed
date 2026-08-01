@@ -20,7 +20,7 @@ export default async function LeafletsPage({
       <p className="mt-2 text-black/70">Clique para baixar a bula do produto.</p>
 
       <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {products.map((p: any) => (
+        {products.map((p) => (
           <a
             key={p.id}
             href={p.leafletPath}

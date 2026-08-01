@@ -1,15 +1,15 @@
+import type { PrismaClient } from "@prisma/client";
+
 const globalForPrisma = globalThis as unknown as {
-  // eslint-disable-next-line
-  prisma: any;
+  prisma: PrismaClient | undefined;
 };
 
-// eslint-disable-next-line
-let _client: any;
+let _client: PrismaClient | undefined;
 
-export async function getPrisma() {
+export async function getPrisma(): Promise<PrismaClient> {
   if (!_client) {
-    const { PrismaClient } = await import("@prisma/client");
-    _client = new PrismaClient({
+    const { PrismaClient: PC } = await import("@prisma/client");
+    _client = new PC({
       log: process.env.NODE_ENV === "production" ? ["error"] : ["error", "warn"],
     });
     if (process.env.NODE_ENV !== "production") {
