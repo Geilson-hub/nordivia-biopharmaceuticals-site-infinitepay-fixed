@@ -9,6 +9,9 @@ const nextConfig = {
     basePath: '/nordivia-biopharmaceuticals-site-infinitepay-fixed',
     output: 'export',
   }),
+  experimental: {
+    serverComponentsExternalPackages: ["@prisma/client"],
+  },
 };
 
 export default withNextIntl(nextConfig);
