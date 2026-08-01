@@ -13,11 +13,11 @@ export async function generateMetadata({
   const isPT = params.locale === "pt-br";
 
   const title = isPT
-    ? "Nordivia Biopharmaceuticals | CiÃªncia que eleva padrÃµes"
+    ? "Nordivia Biopharmaceuticals | Ciência que eleva padrões"
     : "Nordivia Biopharmaceuticals | Science that elevates standards";
 
   const description = isPT
-    ? "Empresa focada em pesquisa aplicada, processos robustos e fabricaÃ§Ã£o com rastreabilidade e controle de qualidade."
+    ? "Empresa focada em pesquisa aplicada, processos robustos e fabricação com rastreabilidade e controle de qualidade."
     : "Company focused on applied research, robust processes and manufacturing with traceability and quality control.";
 
   return {
@@ -220,10 +220,10 @@ export default async function HomePage({
                 <div className="rounded-3xl border border-white/15 bg-white/10 backdrop-blur p-6 shadow-lg">
                   <div className="text-white font-extrabold text-lg">{tHome("commitments.title")}</div>
                   <ul className="mt-3 space-y-2 text-sm text-white/80">
-                    <li>â€¢ {tHome("commitments.item1")}</li>
-                    <li>â€¢ {tHome("commitments.item2")}</li>
-                    <li>â€¢ {tHome("commitments.item3")}</li>
-                    <li>â€¢ {tHome("commitments.item4")}</li>
+                    <li>• {tHome("commitments.item1")}</li>
+                    <li>• {tHome("commitments.item2")}</li>
+                    <li>• {tHome("commitments.item3")}</li>
+                    <li>• {tHome("commitments.item4")}</li>
                   </ul>
                   <div className="mt-5">
                     <Link
@@ -282,10 +282,10 @@ export default async function HomePage({
         </div>
 
         <div className="grid gap-4 md:grid-cols-4">
-          <SoftCard icon="ðŸ§ª" title={tHome("softCards.c1Title")} text={tHome("softCards.c1Body")} />
-          <SoftCard icon="ðŸ“ˆ" title={tHome("softCards.c2Title")} text={tHome("softCards.c2Body")} />
-          <SoftCard icon="âš™ï¸" title={tHome("softCards.c3Title")} text={tHome("softCards.c3Body")} />
-          <SoftCard icon="ðŸ›¡ï¸" title={tHome("softCards.c4Title")} text={tHome("softCards.c4Body")} />
+<SoftCard icon="🧪" title={tHome("softCards.c1Title")} text={tHome("softCards.c1Body")} />
+          <SoftCard icon="🛡️" title={tHome("softCards.c2Title")} text={tHome("softCards.c2Body")} />
+          <SoftCard icon="⚙️" title={tHome("softCards.c3Title")} text={tHome("softCards.c3Body")} />
+          <SoftCard icon="💡" title={tHome("softCards.c4Title")} text={tHome("softCards.c4Body")} />
         </div>
 
         <div className="mt-10 space-y-10">
@@ -295,7 +295,7 @@ export default async function HomePage({
           <SplitRow reverse title={tHome("scaleTitle")} text={tHome("scaleBody")} imageSrc="/home/factory-2.jpg" chips={chips} />
         </div>
 
-        {/* CTA intermediÃ¡rio */}
+        {/* CTA intermediário */}
         <div className="mt-12 rounded-3xl border border-black/10 bg-white p-6 md:p-8 shadow-sm flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
             <div className="text-lg font-extrabold text-black">{tHome("midCta.title")}</div>
