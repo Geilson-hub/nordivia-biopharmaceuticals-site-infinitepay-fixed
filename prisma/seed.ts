@@ -23,19 +23,19 @@ async function main() {
       },
       {
         name: "CJC-1295 With DAC",
-        slug: "cjc-1295-with-dac-5mg",
+        slug: "cjc-1295-dac-5mg",
         concentration: "5mg",
         brlPrice: 2100,
-        image: "/products/scenes/cjc-1295-with-dac-5mg.jpeg",
-        leafletPath: "/leaflets/cjc-1295-with-dac-5mg.pdf"
+        image: "/products/scenes/cjc-1295-dac-5mg.jpeg",
+        leafletPath: "/leaflets/cjc-1295-dac-5mg.pdf"
       },
       {
         name: "CJC-1295 Without DAC",
-        slug: "cjc-1295-without-dac-10mg",
+        slug: "cjc-1295-10mg",
         concentration: "10mg",
         brlPrice: 2000,
-        image: "/products/scenes/cjc-1295-without-dac-10mg.jpeg",
-        leafletPath: "/leaflets/cjc-1295-without-dac-10mg.pdf"
+        image: "/products/scenes/cjc-1295-10mg.jpeg",
+        leafletPath: "/leaflets/cjc-1295-10mg.pdf"
       },
       {
         name: "Follistatin",
@@ -71,11 +71,19 @@ async function main() {
       },
       {
         name: "HGH Fragment 176-191",
-        slug: "hgh-fragment-176-191-5mg",
+        slug: "hgh-fragment-5mg",
         concentration: "5mg",
         brlPrice: 2100,
-        image: "/products/scenes/hgh-fragment-176-191-5mg.jpeg",
-        leafletPath: "/leaflets/hgh-fragment-176-191-5mg.pdf"
+        image: "/products/scenes/hgh-fragment-5mg.jpeg",
+        leafletPath: "/leaflets/hgh-fragment-5mg.pdf"
+      },
+      {
+        name: "IGF-1 LR3",
+        slug: "igf-1-lr3-1mg",
+        concentration: "1mg",
+        brlPrice: 47500,
+        image: "/products/scenes/igf-1-lr3-1mg.jpeg",
+        leafletPath: "/leaflets/igf-1-lr3-1mg.pdf"
       },
       {
         name: "Ipamorelin",
@@ -172,6 +180,14 @@ async function main() {
         brlPrice: 3000,
         image: "/products/scenes/tirzepatide-60mg.jpeg",
         leafletPath: "/leaflets/tirzepatide-60mg.pdf"
+      },
+      {
+        name: "Tirzepatide",
+        slug: "tirzepatide-15mg",
+        concentration: "15mg",
+        brlPrice: 56000,
+        image: "/products/scenes/tirzepatide-15mg.jpeg",
+        leafletPath: "/leaflets/tirzepatide-15mg.pdf"
       }
     ]
   });

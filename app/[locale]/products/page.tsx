@@ -1,5 +1,6 @@
 // app/[locale]/products/page.tsx
 
+import { getExchangeRate } from "@/lib/site"
 import { ProductsClient } from "./ui";
 import type { AppLocale } from "@/i18n/locales";
 import { productsBase } from "./data";
@@ -23,8 +24,8 @@ export default function ProductsPage({
 }: {
   params: { locale: AppLocale };
 }) {
-  // taxa simples por enquanto (depois você me manda a regra real)
-  const brlPerUsd = 5.50; // 1 USD = 5 BRL (exemplo)
+
+  const brlPerUsd = getExchangeRate();
 
   const data = productsBase.map((p) => {
     // converte BRL cents -> USD cents (mantendo precisão em cents)
@@ -46,3 +47,5 @@ export default function ProductsPage({
     </main>
   );
 }
+
+

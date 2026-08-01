@@ -18,7 +18,7 @@ export async function Header({ locale }: { locale: AppLocale }) {
           <div className="rounded-2xl border border-black/10 bg-white/85 backdrop-blur shadow-sm">
             <div className="flex h-16 items-center justify-between gap-3 px-5">
               <Link href={`/${locale}`} className="flex items-center gap-3">
-                <Image src="/brand/logo.svg" alt="Nordivia" width={160} height={44} priority />
+                <Image src="/brands/logo.svg" alt="Nordivia" width={160} height={44} priority />
               </Link>
 
               <nav className="hidden items-center gap-6 md:flex text-sm font-semibold text-black/70">

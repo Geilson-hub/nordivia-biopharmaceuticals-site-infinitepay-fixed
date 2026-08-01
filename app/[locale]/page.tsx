@@ -1,4 +1,4 @@
-// app/[locale]/page.tsx
+﻿// app/[locale]/page.tsx
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,11 +13,11 @@ export async function generateMetadata({
   const isPT = params.locale === "pt-br";
 
   const title = isPT
-    ? "Nordivia Biopharmaceuticals | Ciência que eleva padrões"
+    ? "Nordivia Biopharmaceuticals | CiÃªncia que eleva padrÃµes"
     : "Nordivia Biopharmaceuticals | Science that elevates standards";
 
   const description = isPT
-    ? "Empresa focada em pesquisa aplicada, processos robustos e fabricação com rastreabilidade e controle de qualidade."
+    ? "Empresa focada em pesquisa aplicada, processos robustos e fabricaÃ§Ã£o com rastreabilidade e controle de qualidade."
     : "Company focused on applied research, robust processes and manufacturing with traceability and quality control.";
 
   return {
@@ -220,10 +220,10 @@ export default async function HomePage({
                 <div className="rounded-3xl border border-white/15 bg-white/10 backdrop-blur p-6 shadow-lg">
                   <div className="text-white font-extrabold text-lg">{tHome("commitments.title")}</div>
                   <ul className="mt-3 space-y-2 text-sm text-white/80">
-                    <li>• {tHome("commitments.item1")}</li>
-                    <li>• {tHome("commitments.item2")}</li>
-                    <li>• {tHome("commitments.item3")}</li>
-                    <li>• {tHome("commitments.item4")}</li>
+                    <li>â€¢ {tHome("commitments.item1")}</li>
+                    <li>â€¢ {tHome("commitments.item2")}</li>
+                    <li>â€¢ {tHome("commitments.item3")}</li>
+                    <li>â€¢ {tHome("commitments.item4")}</li>
                   </ul>
                   <div className="mt-5">
                     <Link
@@ -282,10 +282,10 @@ export default async function HomePage({
         </div>
 
         <div className="grid gap-4 md:grid-cols-4">
-          <SoftCard icon="🧪" title={tHome("softCards.c1Title")} text={tHome("softCards.c1Body")} />
-          <SoftCard icon="📈" title={tHome("softCards.c2Title")} text={tHome("softCards.c2Body")} />
-          <SoftCard icon="⚙️" title={tHome("softCards.c3Title")} text={tHome("softCards.c3Body")} />
-          <SoftCard icon="🛡️" title={tHome("softCards.c4Title")} text={tHome("softCards.c4Body")} />
+          <SoftCard icon="ðŸ§ª" title={tHome("softCards.c1Title")} text={tHome("softCards.c1Body")} />
+          <SoftCard icon="ðŸ“ˆ" title={tHome("softCards.c2Title")} text={tHome("softCards.c2Body")} />
+          <SoftCard icon="âš™ï¸" title={tHome("softCards.c3Title")} text={tHome("softCards.c3Body")} />
+          <SoftCard icon="ðŸ›¡ï¸" title={tHome("softCards.c4Title")} text={tHome("softCards.c4Body")} />
         </div>
 
         <div className="mt-10 space-y-10">
@@ -295,7 +295,7 @@ export default async function HomePage({
           <SplitRow reverse title={tHome("scaleTitle")} text={tHome("scaleBody")} imageSrc="/home/factory-2.jpg" chips={chips} />
         </div>
 
-        {/* CTA intermediário */}
+        {/* CTA intermediÃ¡rio */}
         <div className="mt-12 rounded-3xl border border-black/10 bg-white p-6 md:p-8 shadow-sm flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
             <div className="text-lg font-extrabold text-black">{tHome("midCta.title")}</div>
@@ -344,17 +344,16 @@ export default async function HomePage({
               </div>
             </div>
 
-            <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 items-center">
-              <LogoTile src="/brands/brand-1.png" />
-              <LogoTile src="/brands/brand-2.png" />
-              <LogoTile src="/brands/brand-3.png" />
-              <LogoTile src="/brands/brand-4.png" />
-              <LogoTile src="/brands/brand-5.png" />
+            <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 items-center">
+              <div className="rounded-2xl overflow-hidden border border-black/10 bg-white shadow-sm"><div className="relative h-32"><Image src="/home/lab-1.jpg" alt="Lab" fill className="object-cover" /></div></div>
+              <div className="rounded-2xl overflow-hidden border border-black/10 bg-white shadow-sm"><div className="relative h-32"><Image src="/home/lab-2.jpg" alt="Lab2" fill className="object-cover" /></div></div>
+              <div className="rounded-2xl overflow-hidden border border-black/10 bg-white shadow-sm"><div className="relative h-32"><Image src="/home/factory-1.jpg" alt="Fabrica" fill className="object-cover" /></div></div>
+              <div className="rounded-2xl overflow-hidden border border-black/10 bg-white shadow-sm"><div className="relative h-32"><Image src="/home/factory-2.jpg" alt="Fabrica2" fill className="object-cover" /></div></div>
             </div>
           </div>
 
           <div className="border-t border-white/10 px-6 py-4 md:px-10 text-white/70 text-xs md:text-sm flex flex-col md:flex-row md:items-center md:justify-between gap-2">
-            <div>© {new Date().getFullYear()} Nordivia Biopharmaceuticals</div>
+            <div>Â© {new Date().getFullYear()} Nordivia Biopharmaceuticals</div>
             <div className="flex gap-4">
               <span>{tHome("partnersFooter.email")}</span>
               <span>{tHome("partnersFooter.phone")}</span>

@@ -1,54 +1,40 @@
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 import { prisma } from "@/lib/db";
-import { registerSchema } from "@/lib/validation";
+import { loginSchema } from "@/lib/validation";
 import { createSessionToken, setSessionCookie } from "@/lib/auth";
 
 export async function POST(req: Request) {
   try {
     const body = await req.json().catch(() => null);
-    const parsed = registerSchema.safeParse(body);
+    const parsed = loginSchema.safeParse(body);
 
     if (!parsed.success) {
-      return NextResponse.json({ error: "Dados inválidos." }, { status: 400 });
+      return NextResponse.json({ error: "E-mail ou senha inválidos." }, { status: 400 });
     }
 
-    const {
-      fullName,
-      phone,
-      phoneIsWhats,
-      email,
-      password,
-      cpf,
-      address,
-      marketingOpt,
-    } = parsed.data;
+    const { email, password } = parsed.data;
 
-    const existing = await prisma.user.findUnique({
+    const user = await prisma.user.findUnique({
       where: { email },
+      select: { id: true, email: true, passwordHash: true },
     });
 
-    if (existing) {
+    if (!user) {
       return NextResponse.json(
-        { error: "Este e-mail já está cadastrado." },
-        { status: 409 }
+        { error: "E-mail ou senha inválidos." },
+        { status: 401 }
       );
     }
 
-    const passwordHash = await bcrypt.hash(password, 10);
+    const passwordValid = await bcrypt.compare(password, user.passwordHash);
 
-    const user = await prisma.user.create({
-      data: {
-        fullName,
-        phone,
-        phoneIsWhats,
-        email,
-        passwordHash,
-        cpf: cpf || null,
-        address: address || null,
-        marketingOpt,
-      },
-    });
+    if (!passwordValid) {
+      return NextResponse.json(
+        { error: "E-mail ou senha inválidos." },
+        { status: 401 }
+      );
+    }
 
     const token = await createSessionToken({
       uid: user.id,
@@ -60,9 +46,9 @@ export async function POST(req: Request) {
 
     return res;
   } catch (error) {
-    console.error("REGISTER_ERROR", error);
+    console.error("LOGIN_ERROR", error);
     return NextResponse.json(
-      { error: "Erro interno no cadastro." },
+      { error: "Erro interno no login." },
       { status: 500 }
     );
   }
